@@ -1,27 +1,52 @@
 import { useState } from "react"
+import { Routes, Route } from "react-router-dom"
+
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+
 import Home from "./pages/Home"
+import Cart from "./pages/Cart"
+import Profile from "./pages/Profile"
+
 import "./styles.css"
 
 function App() {
 
-  const [cartCount, setCartCount] = useState(0)
+  const [cart, setCart] = useState([])
 
-  const handleAddToCart = () => {
-    setCartCount(cartCount + 1)
+  const handleAddToCart = (product) => {
+    setCart([...cart, product])
   }
 
   return (
+
     <div>
 
-      <Navbar cartCount={cartCount} />
+      <Navbar cartCount={cart.length} />
 
-      <Home onAddToCart={handleAddToCart} />
+      <Routes>
+
+        <Route
+          path="/"
+          element={<Home onAddToCart={handleAddToCart} />}
+        />
+
+        <Route
+          path="/cart"
+          element={<Cart cart={cart} />}
+        />
+
+        <Route
+          path="/profile"
+          element={<Profile />}
+        />
+
+      </Routes>
 
       <Footer />
 
     </div>
+
   )
 }
 

@@ -1,28 +1,44 @@
-const Navbar = ({ cartCount }) => {
+import { Link } from "react-router-dom";
 
+const Navbar = ({ cartCount }) => {
   return (
     <header className="navbar">
 
-      <div className="logo">Iguriro</div>
+      {/* LEFT SIDE */}
+      <div className="nav-left">
+        <Link to="/" className="logo">
+          Iguriro
+        </Link>
 
-      <nav className="nav-links">
-        <a>Shop</a>
-        <a>Categories</a>
-        <a>Deals</a>
-      </nav>
+        <nav className="nav-links">
+          <Link to="/">Shop</Link>
+          <Link to="/">Categories</Link>
+          <Link to="/">Deals</Link>
+        </nav>
+      </div>
 
-      <input
-        className="search"
-        placeholder="Search products"
-      />
+      {/* RIGHT SIDE */}
+      <div className="nav-right">
+        <input
+          type="text"
+          className="search"
+          placeholder="Search products"
+        />
 
-      <div className="cart">
-        🛒
-        <span className="cart-badge">{cartCount}</span>
+        {/* PROFILE */}
+        <Link to="/profile" className="profile">
+          👤
+        </Link>
+
+        {/* CART */}
+        <Link to="/cart" className="cart">
+          🛒
+          <span className="cart-badge">{cartCount}</span>
+        </Link>
       </div>
 
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

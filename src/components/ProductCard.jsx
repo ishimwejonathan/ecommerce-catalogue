@@ -12,6 +12,7 @@ const ProductCard = ({ product, onAddToCart }) => {
       </div>
 
       <div className="product-info">
+
         <h3>{product.title}</h3>
 
         <p className="price">${product.price}</p>
@@ -20,9 +21,13 @@ const ProductCard = ({ product, onAddToCart }) => {
           ⭐ {product.rating?.rate}
         </div>
 
-        <button className="cart-btn" onClick={onAddToCart}>
+        <button
+          className="cart-btn"
+          onClick={() => onAddToCart(product)}
+        >
           Add to Cart
         </button>
+
       </div>
 
     </div>

@@ -20,47 +20,99 @@ body{
   padding:20px;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR (UPDATED)
+========================= */
 
 .navbar{
-  height:64px;
+  height:70px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+  background:#a3c94a;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* LEFT SIDE */
+.nav-left{
   display:flex;
   align-items:center;
   gap:30px;
-  padding:0 30px;
-  background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
+/* LOGO */
 .logo{
   font-size:22px;
   font-weight:700;
-  color:#2563eb;
+  color:#1e3a8a;
+  text-decoration:none;
 }
 
+/* NAV LINKS */
 .nav-links{
   display:flex;
   gap:20px;
 }
 
 .nav-links a{
-  cursor:pointer;
-  font-size:14px;
+  text-decoration:none;
+  color:#1e3a8a;
+  font-weight:500;
+  transition:0.2s;
 }
 
+.nav-links a:hover{
+  color:#2563eb;
+}
+
+/* RIGHT SIDE */
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+/* SEARCH BAR */
 .search{
-  margin-left:auto;
   width:250px;
-  padding:8px;
+  padding:8px 12px;
   border-radius:8px;
   border:1px solid #ddd;
+  outline:none;
+  transition:0.2s;
 }
 
+.search:focus{
+  border-color:#2563eb;
+}
+
+/* PROFILE ICON */
+.profile{
+  font-size:22px;
+  cursor:pointer;
+  text-decoration:none;
+  transition:0.2s;
+}
+
+.profile:hover{
+  transform:scale(1.1);
+}
+
+/* CART ICON */
 .cart{
   position:relative;
   font-size:22px;
+  cursor:pointer;
+  text-decoration:none;
+  transition:0.2s;
 }
 
+.cart:hover{
+  transform:scale(1.1);
+}
+
+/* CART BADGE */
 .cart-badge{
   position:absolute;
   top:-8px;
@@ -72,7 +124,9 @@ body{
   border-radius:50%;
 }
 
-/* CATALOGUE LAYOUT */
+/* =========================
+   CATALOGUE LAYOUT
+========================= */
 
 .catalogue-layout{
   display:grid;
@@ -99,6 +153,28 @@ body{
   display:block;
   margin-top:10px;
   font-size:14px;
+  cursor:pointer;
+}
+
+/* EXTRA FILTERS */
+
+.filter-section{
+  margin-top:15px;
+}
+
+.filter-section h4{
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+.clear-btn{
+  margin-top:20px;
+  width:100%;
+  padding:8px;
+  border:none;
+  background:#ef4444;
+  color:white;
+  border-radius:6px;
   cursor:pointer;
 }
 
@@ -223,8 +299,8 @@ body{
 
 .footer{
   margin-top:40px;
-  padding:40px;
-  background:#111;
+  padding:80px;
+  background:#9b6e6e;
   color:white;
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -253,6 +329,50 @@ body{
   border:none;
   padding:8px 12px;
   border-radius:6px;
+  cursor:pointer;
+}
+
+/* CART PAGE */
+
+.cart-item{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-top:15px;
+  background:white;
+  padding:10px;
+  border-radius:8px;
+}
+
+.cart-total{
+  margin-top:20px;
+  font-size:20px;
+}
+
+/* PROFILE PAGE */
+
+.profile-form{
+  max-width:400px;
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.profile-form input,
+.profile-form textarea{
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+.profile-form button{
+  margin-top:10px;
+  padding:10px;
+  border:none;
+  background:#2563eb;
+  color:white;
+  border-radius:8px;
   cursor:pointer;
 }
 
